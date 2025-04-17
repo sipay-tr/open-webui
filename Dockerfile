@@ -45,6 +45,8 @@ ARG USE_RERANKING_MODEL
 ARG UID
 ARG GID
 
+ENV WEBUI_NAME='Sipay Chatbot'
+
 ## Basis ##
 ENV ENV=prod \
     PORT=8080 \
