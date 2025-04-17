@@ -11,8 +11,6 @@ services:
   open-webui:
     build:
       context: .
-      args:
-        OLLAMA_BASE_URL: '/ollama'
       dockerfile: Dockerfile
     image: ghcr.io/open-webui/open-webui:${WEBUI_DOCKER_TAG-main}
     container_name: open-webui
@@ -25,6 +23,7 @@ services:
     environment:
       - 'OLLAMA_BASE_URL=http://ollama:11434'
       - 'WEBUI_SECRET_KEY='
+      - 'WEBUI_NAME=Sipay Chatbot'
     extra_hosts:
       - host.docker.internal:host-gateway
     restart: unless-stopped
